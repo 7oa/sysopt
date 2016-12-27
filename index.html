@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name='yandex-verification' content='66f1cd29d2da6c13' />
+    <title>Система оптового самообслуживания</title>
+	<link rel="icon" type="image/png" href="images/favicon.png" />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="js/fancybox/jquery.fancybox.css?v=2.1.5" media="screen" />
+    <link rel="stylesheet" href="template_styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/fancybox/jquery.fancybox.js?v=2.1.5"></script>
+    <script type="text/javascript" src="js/send.js"></script>
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+    $(document).ready(function() {
+      $('.carousel').carousel({
+        interval: 5000
+      });
+      //планая прокрутка до якоря
+      $('a.topLink').click(function () { 
+         elementClick = $(this).attr("href");
+         destination = $(elementClick).offset().top;
+         
+         $('html,body').animate( { scrollTop: destination }, 1100 );
+         
+         return false;
+       });
+      $(".feedback").fancybox({
+        padding: 0,
+        helpers: {
+          overlay: {
+            locked: false
+          }
+          },
+          afterLoad: function () {
+             $(".fancybox-wrap").addClass("fbFull");
+          }
+        });
+      $(".revModal").fancybox({
+        padding: 0,
+        helpers: {
+          overlay: {
+            locked: false
+          }
+          }
+        });
+    });
+    </script>
+  </head>
+  <body>
+
+      <div id="openForm" style="display: none;">
+        <form action="" method="post" class="formForm" id="contact_form">
+          <div class="formLine"><input type="text" name="fio" id="fio" class="formInput" placeholder="* ФИО"></div>
+          <div class="formLine"><input type="text" name="company" id="company" class="formInput" placeholder="КОМПАНИЯ"></div>
+          <div class="formLine"><input type="text" name="tel" id="tel" class="formInput" placeholder="* ТЕЛЕФОН"></div>
+          <div class="formLine"><input type="text" name="email" id="email" class="formInput" placeholder="EMAIL"></div>
+          <div class="formLine"><input type="submit" class="formSubmit" id="send_message" value=""></div>
+        </form>
+        <div class="formMess">
+          <div id="email_error" class="error">Не заполнено поле ФИО или номер телефона.</div>
+          <div id="mail_success" class="success">Спасибо. Ваше сообщение отправленно. В ближайшее время с Вами свяжутся.</div>
+          <div id="mail_fail" class="error">Ваше сообщение не отправленно.</div>
+        </div>
+      </div>
+
+    
+
+    <header class="header">
+      <div class="topTitle container text-center"><img src="images/logo.png" alt="Система самообслуживания оптовых клиентов">
+	  <a href="#hiw" class="howItWorkButton topLink">Как это работает?</a>
+	  </div>
+	  
+      <div class="topMenu">
+        <div class="container">
+          <div class="menuBlock">
+            <ul class="ulMenu">
+              <li><a href="#lk" class="topLink">Личный кабинет</a></li>
+              <li><a href="#hiw" class="topLink">Как работает система?</a></li>
+              <li><a href="#rew" class="topLink">Отзывы</a></li>
+              <li><a href="#gost" class="topLink">Гостевой доступ</a></li>
+            </ul>
+          </div>
+          <div class="contactBlock">
+            <span class="tel"><span class="greyText"></span> <span class="redText">8-921-291-66-99</span></span>
+            <span class="email"><span class="redText">info@sysopt.ru</span></span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="slider" id="lk">
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <div style="background:url(images/slider/slide2.png) top center  no-repeat; height:800px;"></div>
+          </div>
+          <div class="item">
+            <div style="background:url(images/slider/slide1.jpg) top center  no-repeat; height:800px;"></div>
+          </div>
+          <div class="item">
+            <div style="background:url(images/slider/slide3.jpg) top center  no-repeat; height:800px;"></div>
+          </div>
+          <div class="item">
+            <div style="background:url(images/slider/slide4.jpg) top center  no-repeat; height:800px;"></div>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+          <span class="glyphicon glyphicon-new-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+          <span class="glyphicon glyphicon-new-right"></span>
+        </a>
+      </div>
+
+      <div class="bottomLine">
+        <img src="images/blueBg.png" alt="">
+      </div>
+      
+      <div class="sliderInner">
+        <div class="fotmRedButton">
+          <a href="#openForm" class="feedback"><img src="images/slideerRedButton.png" alt=""></a>
+        </div>
+        <div class="more">
+          <a href="#hiw" class="topLink"><img src="images/more.png" alt=""></a>
+        </div>
+      </div>
+
+    </div>
+    <div class="howItWork text-center" id="hiw">
+      <h2>как это работает?</h2>
+      <div class="video">
+        <iframe width="920" height="518" src="https://www.youtube.com/embed/OSPm85d-ddE?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <a href="#openForm" class="bigRedButton feedback">
+        <img src="images/bigRedButton.png" alt="" title="">
+      </a>
+    </div>
+    <div class="container reviews" id="rew">
+      <h2>Отзывы</h2>
+      
+
+      <div id="carousel-reviews" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+       <!--  <ol class="carousel-indicators">
+          <li data-target="#carousel-reviews" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-reviews" data-slide-to="1"></li>
+        </ol> -->
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <div class="reviewsAll clearfix">
+
+              <div class="reviewsOne pull-left">
+                <div class="clearfix rFirstLine">
+                  <img src="images/reviews/case1.jpg" alt="Оптовая и розничная торговля инструментом и запчастями">
+                  <div class="rFirstLineTxt">Оптовая и розничная торговля инструментом и запчастями</div>
+<!--                   <div class="rFoto pull-left">
+                    <img src="images/TEMP/rFoto.jpg" alt="">
+                  </div>
+                  <div class="rInfo pull-left">
+                    <div class="rTtl">Аквилон - Инвест</div>
+                    <div class="rName">
+                      Офис-менеджер: <br/>
+                      Горелова Инна 
+                    </div>
+                    <div class="rContact">
+                      т. <span class="redText">+7 (953) 458-89-78</span><br/>
+                      <span class="redText">inka@mail.ru</span>
+                    </div>
+                    
+                  </div> -->
+                </div>
+                <div class="rSecondLine">
+                  <img src="images/qu1.png" class="quotes q-left">Автоматизация товарного учета (прием заявок от покупателей, заказы поставщикам, контроль минимальных остатков по точкам и на складе, аналитика продаж и ассортимента и т.п.) <img src="images/qu2.png" class="quotes q-right">
+                </div>
+                <div class="next text-center"><a href="#rev1" class="revModal">подробнее</a></div>
+              </div>
+              <div id="rev1" class="revModal" style="display: none;">
+				<div class="revModalImg"><img src="images/reviews/case1_big.jpg" alt="Оптовая и розничная торговля инструментом и запчастями"></div>
+                  <h3>Что было сделано:</h3>
+                  - Автоматизация товарного учета (прием заявок от покупателей, заказы поставщикам, контроль минимальных остатков по точкам и на складе, аналитика продаж и ассортимента и т.п.),<br/>
+
+                  - Перевод клиента на современную версию 1С.<br/>
+
+                  - Создание удобного интернет-магазина для торговли оптом и в розницу.<br/>
+
+                  - Полная синхронизация ассортимента и остатков с интернет торговой точкой.<br/>
+
+                  <h3>Результаты:</h3>
+                  - Через пол года после запуска 60% действующих оптовых покупателей перешли на использование интернет ресурса для формирования, отправки и контроля выполнения заявок.<br/>
+
+                  - Заявки из онлайн торговой точки сразу же попадают в 1С, - у менеджеров высвободилось до 40% рабочего времени, которое они теперь тратят на расширение клиентской базы.<br/>
+
+                  - Возможность посмотреть актуальный ассортимент и индивидуальную стоимость на сайте (личный кабинет), и тут же отправить заявку стала значимым конкурентным преимуществом дистрибьютера.<br/>     
+              </div>
+
+              <div class="reviewsOne pull-left">
+                <div class="clearfix rFirstLine">
+                  <img src="images/reviews/case2.jpg" alt="Магазин обуви">
+                  <div class="rFirstLineTxt">Магазин обуви</div>
+<!--                   <div class="rFoto pull-left">
+                    <img src="images/TEMP/rFoto.jpg" alt="">
+                  </div>
+                  <div class="rInfo pull-left">
+                    <div class="rTtl">ProTech</div>
+                    <div class="rName">
+                      Исполнительный директор: <br/>
+                      Мастерсон Анжелика 
+                    </div>
+                    <div class="rContact">
+                      т. <span class="redText">+7 (8181) 45-20-78</span><br/>
+                      <span class="redText">mangel@mail.ru</span>
+                    </div>
+                    
+                  </div> -->
+                </div>
+                <div class="rSecondLine">
+                  <img src="images/qu1.png" class="quotes q-left"> Внедрена система отслеживания продаж товара по различным характеристикам (материал, цвет, бренд и тд)...<img src="images/qu2.png" class="quotes q-right">
+                </div>
+                <div class="next text-center"><a href="#rev2" class="revModal">подробнее</a></div>
+              </div>
+              <div id="rev2" class="revModal" style="display: none;">
+					<div class="revModalImg"><img src="images/reviews/case2_big.jpg" alt="Магазин обуви"></div>
+                  <h3>Что было сделано:</h3>
+                  - Внедрена система отслеживания продаж товара по различным характеристикам (материал, цвет, бренд и тд).<br/>
+                  - Оптимизирован товарный запас. Реализован удобный инструмент управления скидочной и бонусной политикой.<br/>
+                  - Создан удобный интернет-магазина для розничной торговли.<br/>
+
+                  <h3>Результаты:</h3>
+                  - Время работы с клиентом уменьшилось на 40%, теперь клиенты приходят в магазин сразу зная что хотят.<br/>
+                  - Разгрузка продавцов положительно сказалось на качестве обслуживания клиентов, что сказалось на увеличении среднего чека на 10%.<br/>
+                  - Появилась возможность наглядно и удобно информировать покупателей о товарах заменителях, новинках и сопутствующих товарах.<br/>
+                  - За первый год выросли объемы розничных продаж через Интернет магазин и составили 15% от оборота.<br/>
+                  - Существенна расширилась география покупок, что создает положительный имидж компании и помогает продвижению бизнеса в Интернет.   <br/>
+              </div>
+
+              <div class="reviewsOne pull-left">
+                <div class="clearfix rFirstLine">
+				<img src="images/reviews/case3.jpg" alt="Рознично-оптовая торговая сеть сантехнических товаров">
+				<div class="rFirstLineTxt">Рознично-оптовая торговая сеть сантехнических товаров</div>
+<!--                   <div class="rFoto pull-left">
+                    <img src="images/TEMP/rFoto.jpg" alt="">
+                  </div>
+                  <div class="rInfo pull-left">
+                    <div class="rTtl">ГазНефтьПром</div>
+                    <div class="rName">
+                      Начальник кадровой службы: <br/>
+                      Викто Олег
+                    </div>
+                    <div class="rContact">
+                      т. <span class="redText">+7 (909) 444-88-71</span><br/>
+                      <span class="redText">goodgnp@yandex.ru</span>
+                    </div>
+                    
+                  </div> -->
+                </div>
+                <div class="rSecondLine">
+                  <img src="images/qu1.png" class="quotes q-left">Переход на новое ПО 1С: Предприятие 8 Управление Торговлей 11. Адаптация и модернизация старых механизмов и методологии учета в новом ПО ...<img src="images/qu2.png" class="quotes q-right">
+                </div>
+                <div class="next text-center"><a href="#rev3" class="revModal">подробнее</a></div>
+              </div>
+              <div id="rev3" class="revModal" style="display: none;">
+				<div class="revModalImg"><img src="images/reviews/case3_big.jpg" alt="Магазин обуви"></div>
+                  <h3>Что было сделано:</h3>
+					- Переход на новое ПО 1С: Предприятие 8 Управление Торговлей 11 <br/>
+					- Адаптация и модернизация старых механизмов и методологии учета в новом ПО <br/>
+					- Использование VPN для защиты сетевого траффика и защиты от несанкционированного доступа к серверу <br/>
+					- Использование облачного сервера в качестве основного места хранения базы данных <br/>
+
+                  <h3>Результаты:</h3>
+					- Защита от кражи информации из 1С. Конфеденциальность базы данных обеспечивается ее хранением на защищенном ресурсе, защитой сетевого траффика, а также внутренней системой прав 1С:Предприятие <br/>
+					- Подключение спектра торгового оборудования: фискальный регистратор, сканер штрих-кода, эквайринговый терминал, обычные принтеры, принетры этикеток. <br/>
+					- 1С:Предприятие работает в клиент-серверном режиме, что позволяет при линейном увеличении количества пользователей незначительно увеличивать время задержки с БД. <br/>
+					- Механизм ценообразования построенный на кастомной системе компоновки данных, позволяет очень гибко управлять ценообразованием и быстро изменять необходимые параметры, используемые менеджерами каждодневно.  <br/>
+              </div>
+
+            </div>
+          </div>
+          
+
+<!--           <div class="item">
+            <div class="reviewsAll clearfix">
+
+              <div class="reviewsOne pull-left">
+                <div class="clearfix rFirstLine">
+                  <div class="rFoto pull-left">
+                    <img src="images/TEMP/rFoto.jpg" alt="">
+                  </div>
+                  <div class="rInfo pull-left">
+                    <div class="rTtl">Аквилон - Инвест</div>
+                    <div class="rName">
+                      Офис-менеджер: <br/>
+                      Горелова Инна 
+                    </div>
+                    <div class="rContact">
+                      т. <span class="redText">+7 (953) 458-89-78</span><br/>
+                      <span class="redText">inka@mail.ru</span>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="rSecondLine">
+                  <img src="images/qu1.png" class="quotes q-left">Учились перепрыгивать заборы. С двухметровыми проблем не возникло. А с помощью мудрого сержанта, колючей проволоки и планки с наточенными гвоздями все научились перепрыгивать через трехметровые заборы ...<img src="images/qu2.png" class="quotes q-right">
+                </div>
+                <div class="next text-center"><a href="#">подробнее</a></div>
+              </div>
+
+              <div class="reviewsOne pull-left">
+                <div class="clearfix rFirstLine">
+                  <div class="rFoto pull-left">
+                    <img src="images/TEMP/rFoto.jpg" alt="">
+                  </div>
+                  <div class="rInfo pull-left">
+                    <div class="rTtl">ProTech</div>
+                    <div class="rName">
+                      Исполнительный директор: <br/>
+                      Мастерсон Анжелика 
+                    </div>
+                    <div class="rContact">
+                      т. <span class="redText">+7 (8181) 45-20-78</span><br/>
+                      <span class="redText">mangel@mail.ru</span>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="rSecondLine">
+                  <img src="images/qu1.png" class="quotes q-left">Ползаем неплохо, но часто падаем вниз. Сержант разложил внизу дощечки с гвоздями. Первым упал Иванов. Гвозди погнулись, Иванов почти не пострадал.Сержант пришел с зеленой рожей. Попал в собственный ...<img src="images/qu2.png" class="quotes q-right">
+                </div>
+                <div class="next text-center"><a href="#">подробнее</a></div>
+              </div>
+
+              <div class="reviewsOne pull-left">
+                <div class="clearfix rFirstLine">
+                  <div class="rFoto pull-left">
+                    <img src="images/TEMP/rFoto.jpg" alt="">
+                  </div>
+                  <div class="rInfo pull-left">
+                    <div class="rTtl">ГазНефтьПром</div>
+                    <div class="rName">
+                      Начальник кадровой службы: <br/>
+                      Викто Олег
+                    </div>
+                    <div class="rContact">
+                      т. <span class="redText">+7 (909) 444-88-71</span><br/>
+                      <span class="redText">goodgnp@yandex.ru</span>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="rSecondLine">
+                  <img src="images/qu1.png" class="quotes q-left">Учились перепрыгивать заборы. С двухметровыми проблем не возникло. А с помощью мудрого сержанта, колючей проволоки и планки с наточенными гвоздями все научились перепрыгивать через трехметровые заборы ...<img src="images/qu2.png" class="quotes q-right">
+                </div>
+                <div class="next text-center"><a href="#">подробнее</a></div>
+              </div>
+            </div>
+          </div> -->
+
+
+        </div>
+
+        <!-- Controls -->
+        <!-- <a class="left carousel-control" href="#carousel-reviews" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-reviews" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a> -->
+      </div>
+
+
+      
+    </div>
+
+    <div class="about clearfix" id="gost">
+      <div class="bgGrey">
+        <h2>Установка и настройка<br/>системы оптового самообслуживания</h2>
+        <div class="aboutSlider">
+          <div id="carousel-text" class="carousel slide" data-ride="carousel" style="width:920px;margin:0 auto;">
+            <div class="carousel-inner">
+              <div class="item active">
+                <div class="oneAboutSlide">
+					
+                   Процесс внедрения напрямую зависит от Вашей учетной и дисконтной политики, а также от бизнес-процессов сопровождения заявок покупателя. Система самообслуживания интегрируется с Вашей учетной программой 1С и периодически обменивается с ней данными о заказах. Для более точного анализа особенностей продаж необходимо проконсультироваться с нашими специалистами.
+                 </div>
+              </div>
+             <!--  <div class="item">
+                 <div class="oneAboutSlide">
+                   Повышение лояльности покупателей за счет улучшенного и своевременного информирования (Возможность получать информацию о конкретном ассортименте, документообороте, взаиморасчетах, совершать допродажи)
+                 </div>
+              </div>
+              <div class="item">
+                <div class="oneAboutSlide">
+                   Повышение лояльности покупателей за счет улучшенного и своевременного информирования (Возможность получать информацию о конкретном ассортименте, документообороте, взаиморасчетах, совершать допродажи)
+                 </div>
+              </div>
+              <div class="item">
+                 <div class="oneAboutSlide">
+                   Повышение лояльности покупателей за счет улучшенного и своевременного информирования (Возможность получать информацию о конкретном ассортименте, документообороте, взаиморасчетах, совершать допродажи)
+                 </div>
+              </div> -->
+            </div>
+
+            <!-- Controls 
+            <a class="left carousel-control" href="#carousel-text" data-slide="prev">
+              <span class="glyphicon glyphicon-about-left"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel-text" data-slide="next">
+              <span class="glyphicon glyphicon-about-right"></span>
+            </a>-->
+          </div>
+          <!-- <div class="oneAboutSlide">
+            Повышение лояльности покупателей за счет улучшенного и своевременного информирования (Возможность получать информацию о конкретном ассортименте, документообороте, взаиморасчетах, совершать допродажи)
+          </div> -->
+        </div>
+        <div class="aboutButton text-center">
+          <a href="#openForm" class="feedback"><img src="images/midRedButton.png" alt=""></a>
+        </div>
+
+        <div class="aboutBlue clearfix">
+          <div class="container">
+             <row>
+              <div class="col-md-6">
+                <ul>
+                  <li>Ускорение работы клиентских менеджеров </li>
+                  <li>Повышение лояльности покупателей за счет 
+                      улучшенного и своевременного информирования 
+                      (Возможность получать информацию о конкретном 
+                      ассортименте, документообороте, взаиморасчетах, 
+                      совершать допродажи)
+                  </li>
+                  <li>Повышение комфорта ваших клиентов за счет 
+                    удобного подбора аналогов и сопутствующих товаров
+                  </li>
+                  <li>Заявки не будут привязаны ко времени работы 
+                    менеджера
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul>
+                  <li>Легкость отслеживания заказов</li>
+                  <li>Быстрый доступ к взаиморасчетам: история и статус
+                  заказов
+                  </li>
+                  <li>Возможность совершать повторные заявки (шаблон
+                  с позициями, который не нужно будет каждый раз 
+                  создавать заново)
+                  </li>
+                  <li>Отвязка части клиентов от менеджеров 
+                  (Менеджеры могут больше времени уделять 
+                  конкретным, особо крупным клиентам. Клиенты 
+                  не будут зависеть от конкретных менеджеров)
+                  </li>
+                </ul>
+              </div>
+            </row>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 text-left"><div class="copiright">© 2015г. Все права защищенны.</div></div>
+          <div class="col-md-6 text-right"><div class="developers">Разработка - Компания <a href="#" alt="Leeft" title="Leeft" target="_blank">Leeft</a> & <a href="http://webax.org" alt="Webax" title="Webax" target="_blank">Webax</a></div></div>
+        </div>
+      </div>
+    </footer>
+	
+  </body>
+</html>

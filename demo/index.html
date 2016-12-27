@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name='yandex-verification' content='66f1cd29d2da6c13' />
+    <title>Система оптового самообслуживания</title>
+	<link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/js/fancybox/jquery.fancybox.css?v=2.1.5" media="screen" />
+    <link rel="stylesheet" href="/template_styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/fancybox/jquery.fancybox.js?v=2.1.5"></script>
+    <script type="text/javascript" src="/js/send.js"></script>
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+    $(document).ready(function() {
+      $('.carousel').carousel({
+        interval: 5000
+      });
+      //планая прокрутка до якоря
+      $('a.topLink').click(function () { 
+         elementClick = $(this).attr("href");
+         destination = $(elementClick).offset().top;
+         
+         $('html,body').animate( { scrollTop: destination }, 1100 );
+         
+         return false;
+       });
+      $(".feedback").fancybox({
+        padding: 0,
+        helpers: {
+          overlay: {
+            locked: false
+          }
+          },
+          afterLoad: function () {
+             $(".fancybox-wrap").addClass("fbFull");
+          }
+        });
+      $(".revModal").fancybox({
+        padding: 0,
+        helpers: {
+          overlay: {
+            locked: false
+          }
+          }
+        });
+    });
+    </script>
+  </head>
+  <body>
+    <header>
+      
+    </header>
+    <div class="container demoBlock">
+      
+        <div class="row">
+          <div class="col-md-6">
+            <a href="http://demo.cdoc.ru/" class="demoButton" target="_blank">ДЕМО СИСОПТ</a>
+          </div>
+          <div class="col-md-6">
+            <a href="http://demo.cdoc.ru/core/1c_demo/ru_RU/" class="demoButton" target="_blank">ДЕМО 1С</a>
+          </div>
+        </div>
+		<div class="row">
+		
+		<div class="col-md-6">
+			<div style="margin-top:20px;">
+				Логин: demo<br>
+				Пароль: demo
+			</div>
+		</div>
+		</div>
+      
+    </div> 
+    
+    <footer>
+
+    </footer>
+	
+
+  </body>
+</html>
